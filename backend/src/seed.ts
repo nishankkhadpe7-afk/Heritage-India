@@ -55,9 +55,9 @@ const seedDatabase = async () => {
     // Create Nearby Places
     await Place.create([
       // Brihadisvara
-      { siteId, name: 'Saraswathi Mahal Library', location: 'Thanjavur', distance: '1.2 km', category: 'Knowledge Heritage', duration: '40 min', image: '/saraswathi_library.png' },
-      { siteId, name: 'Traditional Craft Centre', location: 'Thanjavur', distance: '2.4 km', category: 'Craft Heritage', duration: '45 min', image: '/craft_centre.jpg' },
-      { siteId, name: 'Schwartz Church', location: 'Thanjavur', distance: '1.8 km', category: 'Historic Architecture', duration: '30 min', image: '/schwartz_church.png' },
+      { siteId, name: 'Saraswathi Mahal Library', location: 'Thanjavur', distance: '1.2 km', category: 'Knowledge Heritage', duration: '40 min', image: '/assets/nearbydiscovery.png' },
+      { siteId, name: 'Traditional Craft Centre', location: 'Thanjavur', distance: '2.4 km', category: 'Craft Heritage', duration: '45 min', image: '/assets/traditionalcrafts.png' },
+      { siteId, name: 'Schwartz Church', location: 'Thanjavur', distance: '1.8 km', category: 'Historic Architecture', duration: '30 min', image: '/assets/temple-hero.png' },
       
       // Ajanta Caves
       { siteId: ajantaId, name: 'Ellora Caves', location: 'Maharashtra', distance: '100 km', category: 'Historic Architecture', duration: '3 hrs', image: '/assets/nearbydiscovery.png' },
