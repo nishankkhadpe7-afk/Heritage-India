@@ -26,7 +26,7 @@ Object.entries(topics).forEach(([filename, title]) => {
         if (pages[pageId].thumbnail && pages[pageId].thumbnail.source) {
           const imgUrl = pages[pageId].thumbnail.source;
           console.log(`Downloading ${title} from ${imgUrl}`);
-          https.get(imgUrl, (imgRes) => {
+          https.get(imgUrl, options, (imgRes) => {
             const file = fs.createWriteStream(path.join(downloadDir, filename));
             imgRes.pipe(file);
           });
