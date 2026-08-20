@@ -24,6 +24,16 @@ const seedDatabase = async () => {
 
     const siteId = mainSite._id;
 
+    // Create Second Site (Ajanta Caves) for Hackathon Demo
+    const secondSite = await Site.create({
+      name: 'Ajanta Caves',
+      description: 'Ancient Buddhist cave monuments featuring exquisite paintings and rock-cut sculptures.',
+      location: 'Chhatrapati Sambhajinagar, Maharashtra',
+      heroImage: '/assets/nearbydiscovery.png'
+    });
+    
+    const ajantaId = secondSite._id;
+
     // Create Experiences
     await Experience.create([
       { siteId, category: 'Music', title: 'The sound of the veena', copy: 'Explore a carefully considered digital experience.', img: '/assets/thesoundofwaves.png' },
@@ -34,22 +44,38 @@ const seedDatabase = async () => {
       { siteId, category: 'Garments', title: 'Traditional garments', copy: 'Explore the textile heritage.', img: '/assets/garments_heritage.jpg' },
       { siteId, category: 'Agriculture', title: 'Agricultural practices', copy: 'Deep connection between land and people.', img: '/assets/agriculture_heritage.jpg' },
       { siteId, category: 'Rituals', title: 'Sacred rituals', copy: 'Witness spiritual practices.', img: '/assets/rituals_heritage.jpg' },
-      { siteId, category: 'Occupations', title: 'Historic occupations', copy: 'Learn about traditional livelihoods.', img: '/assets/occupations_heritage.jpg' }
+      { siteId, category: 'Occupations', title: 'Historic occupations', copy: 'Learn about traditional livelihoods.', img: '/assets/occupations_heritage.jpg' },
+      
+      // Ajanta Caves
+      { siteId: ajantaId, category: 'Stories', title: 'Jataka Tales', copy: 'Stories of previous lives of the Buddha painted on cave walls.', img: '/assets/storiesrooted.png' },
+      { siteId: ajantaId, category: 'Crafts', title: 'Rock-cut Architecture', copy: 'Mastery of ancient Indian rock-cut carving.', img: '/assets/traditionalcrafts.png' },
+      { siteId: ajantaId, category: 'Rituals', title: 'Buddhist Chants', copy: 'The acoustics of the Chaitya halls designed for chanting.', img: '/assets/rituals_heritage.jpg' }
     ]);
 
     // Create Nearby Places
     await Place.create([
+      // Brihadisvara
       { siteId, name: 'Saraswathi Mahal Library', location: 'Thanjavur', distance: '1.2 km', category: 'Knowledge Heritage', duration: '40 min', image: '/saraswathi_library.png' },
       { siteId, name: 'Traditional Craft Centre', location: 'Thanjavur', distance: '2.4 km', category: 'Craft Heritage', duration: '45 min', image: '/craft_centre.jpg' },
-      { siteId, name: 'Schwartz Church', location: 'Thanjavur', distance: '1.8 km', category: 'Historic Architecture', duration: '30 min', image: '/schwartz_church.png' }
+      { siteId, name: 'Schwartz Church', location: 'Thanjavur', distance: '1.8 km', category: 'Historic Architecture', duration: '30 min', image: '/schwartz_church.png' },
+      
+      // Ajanta Caves
+      { siteId: ajantaId, name: 'Ellora Caves', location: 'Maharashtra', distance: '100 km', category: 'Historic Architecture', duration: '3 hrs', image: '/assets/nearbydiscovery.png' },
+      { siteId: ajantaId, name: 'Daulatabad Fort', location: 'Maharashtra', distance: '85 km', category: 'Historic Architecture', duration: '2 hrs', image: '/assets/heritageexperience.png' }
     ]);
 
     // Create Zones
     await Zone.create([
+      // Brihadisvara
       { siteId, name: 'Main Monument', occupancy: 86, vulnerability: 90, status: 'Critical' },
       { siteId, name: 'Museum', occupancy: 42, vulnerability: 60, status: 'Normal' },
       { siteId, name: 'Courtyard', occupancy: 64, vulnerability: 54, status: 'Warning' },
-      { siteId, name: 'Garden', occupancy: 25, vulnerability: 35, status: 'Normal' }
+      { siteId, name: 'Garden', occupancy: 25, vulnerability: 35, status: 'Normal' },
+      
+      // Ajanta Caves
+      { siteId: ajantaId, name: 'Cave 1 (Main Shrine)', occupancy: 95, vulnerability: 98, status: 'Critical' },
+      { siteId: ajantaId, name: 'Cave 26 (Chaitya)', occupancy: 70, vulnerability: 80, status: 'Warning' },
+      { siteId: ajantaId, name: 'Viewpoint', occupancy: 30, vulnerability: 10, status: 'Normal' }
     ]);
 
     console.log('Database seeded successfully!');
