@@ -29,7 +29,7 @@ const seedDatabase = async () => {
       name: 'Ajanta Caves',
       description: 'Ancient Buddhist cave monuments featuring exquisite paintings and rock-cut sculptures.',
       location: 'Chhatrapati Sambhajinagar, Maharashtra',
-      heroImage: '/assets/nearbydiscovery.png'
+      heroImage: '/assets/ajanta_hero.jpg'
     });
     
     const ajantaId = secondSite._id;
@@ -47,9 +47,9 @@ const seedDatabase = async () => {
       { siteId, category: 'Occupations', title: 'Historic occupations', copy: 'Learn about traditional livelihoods.', img: '/assets/occupations_heritage.jpg' },
       
       // Ajanta Caves
-      { siteId: ajantaId, category: 'Stories', title: 'Jataka Tales', copy: 'Stories of previous lives of the Buddha painted on cave walls.', img: '/assets/storiesrooted.png' },
-      { siteId: ajantaId, category: 'Crafts', title: 'Rock-cut Architecture', copy: 'Mastery of ancient Indian rock-cut carving.', img: '/assets/traditionalcrafts.png' },
-      { siteId: ajantaId, category: 'Rituals', title: 'Buddhist Chants', copy: 'The acoustics of the Chaitya halls designed for chanting.', img: '/assets/rituals_heritage.jpg' }
+      { siteId: ajantaId, category: 'Stories', title: 'Jataka Tales', copy: 'Stories of previous lives of the Buddha painted on cave walls.', img: '/assets/jataka_tales.jpg' },
+      { siteId: ajantaId, category: 'Crafts', title: 'Rock-cut Architecture', copy: 'Mastery of ancient Indian rock-cut carving.', img: '/assets/rock_cut.jpg' },
+      { siteId: ajantaId, category: 'Rituals', title: 'Buddhist Chants', copy: 'The acoustics of the Chaitya halls designed for chanting.', img: '/assets/buddhist_chant.jpg' }
     ]);
 
     // Create Nearby Places
@@ -60,8 +60,8 @@ const seedDatabase = async () => {
       { siteId, name: 'Schwartz Church', location: 'Thanjavur', distance: '1.8 km', category: 'Historic Architecture', duration: '30 min', image: '/assets/temple-hero.png' },
       
       // Ajanta Caves
-      { siteId: ajantaId, name: 'Ellora Caves', location: 'Maharashtra', distance: '100 km', category: 'Historic Architecture', duration: '3 hrs', image: '/assets/nearbydiscovery.png' },
-      { siteId: ajantaId, name: 'Daulatabad Fort', location: 'Maharashtra', distance: '85 km', category: 'Historic Architecture', duration: '2 hrs', image: '/assets/heritageexperience.png' }
+      { siteId: ajantaId, name: 'Ellora Caves', location: 'Maharashtra', distance: '100 km', category: 'Historic Architecture', duration: '3 hrs', image: '/assets/ellora.jpg' },
+      { siteId: ajantaId, name: 'Daulatabad Fort', location: 'Maharashtra', distance: '85 km', category: 'Historic Architecture', duration: '2 hrs', image: '/assets/daulatabad.jpg' }
     ]);
 
     // Create Zones
