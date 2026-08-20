@@ -3,12 +3,8 @@ const https = require('https');
 const path = require('path');
 
 const topics = {
-  'ajanta_hero.jpg': 'Ajanta_Caves',
   'jataka_tales.jpg': 'Jataka_tales',
-  'rock_cut.jpg': 'Indian_rock-cut_architecture',
-  'buddhist_chant.jpg': 'Dhammapada',
-  'ellora.jpg': 'Kailasa_Temple,_Ellora',
-  'daulatabad.jpg': 'Daulatabad_Fort'
+  'buddhist_chant.jpg': 'Dhammapada'
 };
 
 const downloadDir = path.join(__dirname, '..', '..', 'public', 'assets');
